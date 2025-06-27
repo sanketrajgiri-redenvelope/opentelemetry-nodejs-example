@@ -2,8 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
-     "outDir": "dist",         // where compiled JS goes
-    "rootDir": "src", 
+     "outDir": "dist",         // where compiled JS goes 
     "strict": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,

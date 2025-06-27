@@ -9,7 +9,8 @@ const usersRoute = new Hono();
 
 // get all users
 usersRoute.get("/", async (c) => {
-  logger.info("Received request at /users");
+  const headers = Object.fromEntries(c.req.raw.headers.entries());
+  logger.info({ headers }, "Received request at /users");
   const users = await db.select().from(usersTable);
   return c.json(users);
 });

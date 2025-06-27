@@ -73,5 +73,24 @@ app.post('/products/:id/decrement-stock', async (c) => {
   }
 });
 
+app.post('/products/:id/increment-stock', async (c) => {
+  const { incrementBy } = await c.req.json();
+  const id = c.req.param('id');
+
+  try {
+    const product = await Product.findById(id);
+    if (!product) {
+      return c.json({ message: 'Product not found' }, 404);
+    }
+
+    product.stock += incrementBy;
+    await product.save();
+
+    return c.json(product, 200);
+  } catch (error) {
+    return c.json({ message: 'Internal server error', details: error.message }, 500);
+  }
+});
+
 serve({ fetch: app.fetch, port });
 logger.info(`Product Service running on http://localhost:${port}`);

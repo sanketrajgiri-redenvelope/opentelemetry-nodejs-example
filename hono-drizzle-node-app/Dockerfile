@@ -11,10 +11,10 @@ COPY . .
 
 RUN npm run build
 
-FROM node:22.13.1-alpine AS final-image
+FROM gcr.io/distroless/nodejs22-debian12 AS final-image
 
 WORKDIR /app
-COPY --chown=node:node --from=build /app/dist ./dist
-COPY --chown=node:node --from=build /app/node_modules ./node_modules
-USER node
+COPY --chown=nonroot:nonroot --from=build /app/dist ./dist
+COPY --chown=nonroot:nonroot --from=build /app/node_modules ./node_modules
+USER nonroot
 CMD [ "-r","./dist/tracing.js","dist/index.js"]

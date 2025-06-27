@@ -14,4 +14,4 @@ FROM gcr.io/distroless/nodejs22-debian12 AS final-image
 WORKDIR /app
 COPY --chown=nonroot:nonroot --from=build /app /app
 USER nonroot
-CMD ["server.js"]
+CMD ["-r", "./telemetry.js", "server.js"]

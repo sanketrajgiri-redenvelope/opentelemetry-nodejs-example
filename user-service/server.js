@@ -52,7 +52,8 @@ app.get('/users', async (c) => {
 app.get('/external/users', async (c) => {
   const externalUrl = 'http://hono-app:3000/users';
   try {
-    logger.info(`Calling external service at ${externalUrl}`);
+      const headers = Object.fromEntries(c.req.raw.headers.entries());
+    logger.info({headers},`Calling external service at ${externalUrl}`);
     const response = await fetch(externalUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch from external service: ${response.statusText}`);

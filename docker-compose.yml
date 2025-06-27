@@ -29,7 +29,7 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
       - OTEL_SERVICE_NAME=hono-drizzle-node-app
-      - NODE_OPTIONS=--experimental-loader=@opentelemetry/instrumentation/hook.mjs
+      # - NODE_OPTIONS=--experimental-loader=@opentelemetry/instrumentation/hook.mjs
       # - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,pg,pino
       # - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
     depends_on:
@@ -46,9 +46,9 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
       - OTEL_SERVICE_NAME=order-service
-      - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
-      - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
-      - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
+      # - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
+      # - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
+      # - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
     depends_on:
       - mongodb
       - otel-collector
@@ -100,7 +100,7 @@ services:
       - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
       - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
       - OTEL_SERVICE_NAME=user-service
-      - NODE_OPTIONS=--experimental-loader=@opentelemetry/instrumentation/hook.mjs
+      # - NODE_OPTIONS=--experimental-loader=@opentelemetry/instrumentation/hook.mjs
       # - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
       # - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
       # - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
@@ -120,6 +120,7 @@ services:
       - "4318:4318"
       - "8888:8888"
       - "2255:2255"
+      - "8889:8889"
     environment:
       - DD_API_KEY=abcd
     networks:

@@ -9,9 +9,9 @@ RUN npm install
 # Copy source and build
 COPY . .
 
-FROM node:22.13.1-alpine AS final-image
+FROM gcr.io/distroless/nodejs22-debian12 AS final-image
 
 WORKDIR /app
-COPY --chown=node:node --from=build /app /app
-USER node
+COPY --chown=nonroot:nonroot --from=build /app /app
+USER nonroot
 CMD ["-r","./telemetry.js","server.js"]

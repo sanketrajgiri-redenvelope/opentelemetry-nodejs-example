@@ -7,7 +7,8 @@ import { performance } from "perf_hooks";
 import logger from "./logger.js";
 const { connect, Schema, model } = mongoose;
 import { trace, metrics, SpanStatusCode } from "@opentelemetry/api";
-
+import  externalHandler  from "./handler/handler.js"
+import {responseTimeMiddleware} from "./middleware/metricsMiddleware.js"
 const tracer = trace.getTracer("order-service");
 const meter = metrics.getMeter("order-service");
 import externaHandler from "./handlers/handlers.js"
@@ -30,6 +31,7 @@ const OrderSchema = new Schema({
 });
 
 const Order = model("Order", OrderSchema);
+app.use("*",responseTimeMiddleware)
 
 app.get("/", async (c) => {
   logger.info("Order Service is running");
@@ -53,7 +55,6 @@ app.post("/orders", async (c) => {
   try {
     const body = await c.req.json();
     const order = new Order(body);
-
     await validateOrder(order);
     await order.save();
     logger.info({ orderId: order._id.toString() }, "Order created successfully");
@@ -114,22 +115,23 @@ app.patch("/orders/:id", async (c) => {
   }
 });
 
-app.get('/external', externaHandler);
+app.get('/external', externalHandler);
 
 serve({ fetch: app.fetch, port });
 logger.info(`Order Service running on http://localhost:${port}`);
+
+const orderValidationDurationHistogram = meter.createHistogram(
+  "order_validation_duration",
+  {
+    description: "Measures the duration of order validation",
+    unit: "ms",
+  }
+);
 
 async function validateOrder(order) {
   const startTime = performance.now();
   logger.info({ orderId: order._id.toString() }, "Starting order validation");
 
-  const orderValidationDurationHistogram = meter.createHistogram(
-    "order_validation_duration",
-    {
-      description: "Measures the duration of order validation",
-      unit: "ms",
-    }
-  );
 
   return tracer.startActiveSpan("validate-order", async (span) => {
     try {

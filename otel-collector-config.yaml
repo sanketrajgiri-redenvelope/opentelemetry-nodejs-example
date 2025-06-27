@@ -56,13 +56,15 @@ exporters:
     api:
       site: ap1.datadoghq.com
       key: ${env:DD_API_KEY}
+  prometheus:
+    endpoint: "0.0.0.0:8889" 
 service:
   extensions: [health_check, zpages]
   pipelines:
     metrics:
       receivers: [otlp,datadog/connector]
       processors: [filter/drop_metrics,batch,resourcedetection]
-      exporters: [datadog]
+      exporters: [datadog,prometheus]
     traces:
       receivers: [otlp]
       processors: [batch]
@@ -70,4 +72,4 @@ service:
     logs:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug,datadog]
+      exporters: [datadog]
