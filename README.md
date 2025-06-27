@@ -81,6 +81,7 @@ Each service offers several endpoints for interacting with the application:
   order service ( GET /external) -> user service ( GET /external/users) -> hono app -> (GET /users) -> postgres
 
   ![screenshot1](./docs/Screenshot%202025-06-26%20at%204.53.41 PM.png)
+  
 
 **2.  Custom Spans for Handlers**
 
