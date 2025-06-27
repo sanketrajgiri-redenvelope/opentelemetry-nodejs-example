@@ -1,0 +1,164 @@
+# HELP http_client_request_duration_seconds Measures the duration of outbound HTTP requests.
+# TYPE http_client_request_duration_seconds histogram
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.005"} 0
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.01"} 0
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.025"} 0
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.05"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.075"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.1"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.25"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.5"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="0.75"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="1"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="2.5"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="5"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="7.5"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="10"} 1
+http_client_request_duration_seconds_bucket{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http",le="+Inf"} 1
+http_client_request_duration_seconds_sum{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http"} 0.038543
+http_client_request_duration_seconds_count{http_request_method="GET",http_response_status_code="200",job="order-service",otel_scope_name="@opentelemetry/instrumentation-undici",otel_scope_schema_url="",otel_scope_version="0.13.1",server_address="user",server_port="3004",url_scheme="http"} 1
+# HELP http_request_count_total Total number of HTTP requests
+# TYPE http_request_count_total counter
+http_request_count_total{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",status="200"} 3
+http_request_count_total{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",status="200"} 1
+# HELP http_request_latency_ms_milliseconds Duration of HTTP responses in milliseconds
+# TYPE http_request_latency_ms_milliseconds histogram
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="0"} 0
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="5"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="10"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="25"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="50"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="75"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="100"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="250"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="500"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="750"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="1000"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="2500"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="5000"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="7500"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="10000"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/",le="+Inf"} 3
+http_request_latency_ms_milliseconds_sum{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/"} 1.8479999999872234
+http_request_latency_ms_milliseconds_count{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/"} 3
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="0"} 0
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="5"} 0
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="10"} 0
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="25"} 0
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="50"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="75"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="100"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="250"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="500"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="750"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="1000"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="2500"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="5000"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="7500"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="10000"} 1
+http_request_latency_ms_milliseconds_bucket{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external",le="+Inf"} 1
+http_request_latency_ms_milliseconds_sum{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external"} 47.64670800000022
+http_request_latency_ms_milliseconds_count{job="order-service",method="GET",otel_scope_name="http-server",otel_scope_schema_url="",otel_scope_version="",route="/external"} 1
+# HELP nodejs_eventloop_delay_max_seconds Event loop maximum delay.
+# TYPE nodejs_eventloop_delay_max_seconds gauge
+nodejs_eventloop_delay_max_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.018759679
+# HELP nodejs_eventloop_delay_mean_seconds Event loop mean delay.
+# TYPE nodejs_eventloop_delay_mean_seconds gauge
+nodejs_eventloop_delay_mean_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.012018026739330794
+# HELP nodejs_eventloop_delay_min_seconds Event loop minimum delay.
+# TYPE nodejs_eventloop_delay_min_seconds gauge
+nodejs_eventloop_delay_min_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.009658368
+# HELP nodejs_eventloop_delay_p50_seconds Event loop 50 percentile delay.
+# TYPE nodejs_eventloop_delay_p50_seconds gauge
+nodejs_eventloop_delay_p50_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.011984895
+# HELP nodejs_eventloop_delay_p90_seconds Event loop 90 percentile delay.
+# TYPE nodejs_eventloop_delay_p90_seconds gauge
+nodejs_eventloop_delay_p90_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.013246463
+# HELP nodejs_eventloop_delay_p99_seconds Event loop 99 percentile delay.
+# TYPE nodejs_eventloop_delay_p99_seconds gauge
+nodejs_eventloop_delay_p99_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.013787135
+# HELP nodejs_eventloop_delay_stddev_seconds Event loop standard deviation delay.
+# TYPE nodejs_eventloop_delay_stddev_seconds gauge
+nodejs_eventloop_delay_stddev_seconds{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.000985294262034685
+# HELP nodejs_eventloop_time_seconds_total Cumulative duration of time the event loop has been in each state.
+# TYPE nodejs_eventloop_time_seconds_total counter
+nodejs_eventloop_time_seconds_total{job="order-service",nodejs_eventloop_state="active",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 1.027119442994357
+nodejs_eventloop_time_seconds_total{job="order-service",nodejs_eventloop_state="idle",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 299.132406694
+# HELP nodejs_eventloop_utilization_ratio Event loop utilization
+# TYPE nodejs_eventloop_utilization_ratio gauge
+nodejs_eventloop_utilization_ratio{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0"} 0.0042644225465872454
+# HELP v8js_gc_duration_seconds Garbage collection duration by kind, one of major, minor, incremental or weakcb.
+# TYPE v8js_gc_duration_seconds histogram
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental",le="0.01"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental",le="0.1"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental",le="1"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental",le="10"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental",le="+Inf"} 2
+v8js_gc_duration_seconds_sum{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental"} 0.00418495799601078
+v8js_gc_duration_seconds_count{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="incremental"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major",le="0.01"} 1
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major",le="0.1"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major",le="1"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major",le="10"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major",le="+Inf"} 2
+v8js_gc_duration_seconds_sum{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major"} 0.014204333007335663
+v8js_gc_duration_seconds_count{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="major"} 2
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor",le="0.01"} 7
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor",le="0.1"} 7
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor",le="1"} 7
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor",le="10"} 7
+v8js_gc_duration_seconds_bucket{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor",le="+Inf"} 7
+v8js_gc_duration_seconds_sum{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor"} 0.01657558098435402
+v8js_gc_duration_seconds_count{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_gc_type="minor"} 7
+# HELP v8js_memory_heap_limit_bytes Total heap memory size pre-allocated.
+# TYPE v8js_memory_heap_limit_bytes gauge
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_large_object_space"} 172032
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_space"} 1.31072e+06
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="large_object_space"} 2.281472e+06
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_large_object_space"} 0
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_space"} 1.048576e+06
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="old_space"} 2.1225472e+07
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_large_object_space"} 0
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_large_object_space"} 0
+v8js_memory_heap_limit_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_space"} 3.489792e+06
+# HELP v8js_memory_heap_space_available_size_bytes Heap space available size.
+# TYPE v8js_memory_heap_space_available_size_bytes gauge
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_large_object_space"} 0
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_space"} 120032
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="large_object_space"} 0
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_large_object_space"} 1.048576e+06
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_space"} 58128
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="old_space"} 701656
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_large_object_space"} 0
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_large_object_space"} 0
+v8js_memory_heap_space_available_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_space"} 192704
+# HELP v8js_memory_heap_space_physical_size_bytes Committed size of a heap space.
+# TYPE v8js_memory_heap_space_physical_size_bytes gauge
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_large_object_space"} 172032
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_space"} 1.26976e+06
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="large_object_space"} 2.281472e+06
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_large_object_space"} 0
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_space"} 1.048576e+06
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="old_space"} 2.1225472e+07
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_large_object_space"} 0
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_large_object_space"} 0
+v8js_memory_heap_space_physical_size_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_space"} 3.489792e+06
+# HELP v8js_memory_heap_used_bytes Heap Memory size allocated.
+# TYPE v8js_memory_heap_used_bytes gauge
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_large_object_space"} 155328
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="code_space"} 1.108768e+06
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="large_object_space"} 2.2478e+06
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_large_object_space"} 0
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="new_space"} 972784
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="old_space"} 2.009888e+07
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_large_object_space"} 0
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_large_object_space"} 0
+v8js_memory_heap_used_bytes{job="order-service",otel_scope_name="@opentelemetry/instrumentation-runtime-node",otel_scope_schema_url="",otel_scope_version="0.16.0",v8js_heap_space_name="trusted_space"} 3.235104e+06

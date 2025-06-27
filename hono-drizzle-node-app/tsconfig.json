@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+     "outDir": "dist",         // where compiled JS goes
+    "rootDir": "src", 
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "types": [
+      "node"
+    ],
+    
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+  }
+}

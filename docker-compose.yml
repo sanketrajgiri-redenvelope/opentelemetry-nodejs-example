@@ -1,0 +1,132 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - myapp-network
+  postgresql:
+    image: postgres:17.5
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: otel
+      POSTGRES_DB: otel
+    networks:
+      - myapp-network
+    # volumes:
+  hono-app:
+    build: ./hono-drizzle-node-app
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://root:otel@postgresql:5432/otel
+      # - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
+      - OTEL_SERVICE_NAME=hono-drizzle-node-app
+      - NODE_OPTIONS=--experimental-loader=@opentelemetry/instrumentation/hook.mjs
+      # - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,pg,pino
+      # - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
+    depends_on:
+      - postgresql
+      - otel-collector
+    networks:
+      - myapp-network
+  order:
+    build: ./order-service
+    ports:
+      - "3001:3001"
+    environment:
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
+      - OTEL_SERVICE_NAME=order-service
+      - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
+      - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
+      - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
+    depends_on:
+      - mongodb
+      - otel-collector
+    networks:
+      - myapp-network
+
+  payment:
+    build: ./payment-service
+    ports:
+      - "3002:3002"
+    environment:
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
+      - OTEL_SERVICE_NAME=payment-service
+      - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
+      - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
+      - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
+    depends_on:
+      - mongodb
+      - otel-collector
+    networks:
+      - myapp-network
+
+  product:
+    build: ./product-service
+    ports:
+      - "3003:3003"
+    environment:
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
+      - OTEL_SERVICE_NAME=product-service
+      - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
+      - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
+      - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
+    depends_on:
+      - mongodb
+      - otel-collector
+    networks:
+      - myapp-network
+
+  user:
+    build: ./user-service
+    ports:
+      - "3004:3004"
+    environment:
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+      - OTEL_NODE_RESOURCE_DETECTORS=env,host,os
+      - OTEL_SERVICE_NAME=user-service
+      - NODE_OPTIONS=--experimental-loader=@opentelemetry/instrumentation/hook.mjs
+      # - NODE_OPTIONS=--require @opentelemetry/auto-instrumentations-node/register
+      # - OTEL_NODE_ENABLED_INSTRUMENTATIONS=http,mongoose,pino
+      # - OTEL_NODE_DISABLED_INSTRUMENTATIONS=net
+    depends_on:
+      - mongodb
+      - otel-collector
+    networks:
+      - myapp-network
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.128.0
+    command: ["--config", "/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml:ro
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "8888:8888"
+      - "2255:2255"
+    environment:
+      - DD_API_KEY=abcd
+    networks:
+      - myapp-network
+
+networks:
+  myapp-network:
+
+volumes:
+  mongo-data:
