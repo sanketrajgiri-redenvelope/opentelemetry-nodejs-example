@@ -37,18 +37,23 @@ processors:
     timeout: 2s
     system:
       hostname_sources: [os]
-  filter/drop_metrics:
-        metrics:
-          exclude:
-            match_type: strict  # or 'regexp' for regex matching
-            metric_names:
-              - http.server.duration
-              - http.client.duration
+  # filter/drop_instrumentation_scope:
+  #   metrics:
+  #     metric: 
+  #       exclude:
+  #         match_type: regexp
+  #         instrumentation_scope:
+  #           name: '.*opentelemetry.*'
+  filter:
+    error_mode: ignore
+    metrics:
+      metric:
+        - 'IsMatch(instrumentation_scope.name, ".*opentelemetry.*") == true'
 extensions:
   health_check: {}
   zpages: {}
 connectors:
-      datadog/connector:
+  datadog/connector:
 exporters:
   debug:
     verbosity: detailed
@@ -57,18 +62,18 @@ exporters:
       site: ap1.datadoghq.com
       key: ${env:DD_API_KEY}
   prometheus:
-    endpoint: "0.0.0.0:8889" 
+    endpoint: "0.0.0.0:8889"
 service:
   extensions: [health_check, zpages]
   pipelines:
     metrics:
-      receivers: [otlp,datadog/connector]
-      processors: [filter/drop_metrics,batch,resourcedetection]
-      exporters: [datadog,prometheus]
+      receivers: [otlp, datadog/connector]
+      processors: [filter, batch, resourcedetection]
+      exporters: [datadog, prometheus, debug]
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [datadog/connector,datadog]
+      exporters: [datadog/connector, datadog]
     logs:
       receivers: [otlp]
       processors: [batch]

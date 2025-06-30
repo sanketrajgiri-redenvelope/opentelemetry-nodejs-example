@@ -122,7 +122,7 @@ services:
       - "2255:2255"
       - "8889:8889"
     environment:
-      - DD_API_KEY=abcd
+      - DD_API_KEY=ff46fd28f88b1bf2bd7ddd13db49a646
     networks:
       - myapp-network
 
